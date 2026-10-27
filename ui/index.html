@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MiniCursor · 桌面 AI 编程助手</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">MiniCursor</div>
+      <div class="badges">
+        <span id="badge-mode" class="badge">连接中…</span>
+        <span id="badge-model" class="badge ghost">model</span>
+        <span id="badge-ws" class="badge ghost">workspace</span>
+      </div>
+      <div class="actions">
+        <button id="btn-stop" class="btn danger" disabled>中断</button>
+        <button id="btn-clear" class="btn">清空会话</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="col files">
+        <div class="col-head">工作区</div>
+        <div id="tree" class="tree"></div>
+      </aside>
+
+      <section class="col chat">
+        <div id="messages" class="messages"></div>
+        <div class="composer">
+          <textarea id="input" rows="3" placeholder="描述你要做的事。Enter 发送，Shift+Enter 换行"></textarea>
+          <button id="btn-send" class="btn primary">发送</button>
+        </div>
+      </section>
+
+      <aside class="col trace">
+        <div class="col-head">工具调用 / 变更</div>
+        <div id="tool-list" class="tool-list">
+          <div class="empty">还没有工具调用。模型每次调用工具都会出现在这里，并展示 diff 与命令输出。</div>
+        </div>
+      </aside>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
