@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "demo": {
+      "description": "本地示例 MCP server（tools: get_time / count_words / list_python_files）",
+      "command": "python",
+      "args": ["mcp_servers/demo_server.py"],
+      "enabled": true
+    },
+    "filesystem": {
+      "description": "官方 filesystem server，需要 Node/npx；启用前把 args 最后一项目换成你的工作区绝对路径",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./workspace"],
+      "enabled": false
+    }
+  }
+}

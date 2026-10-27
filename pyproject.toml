@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mini-cursor"
+version = "1.0.0"
+description = "MiniCursor - 桌面 AI 编程助手（read/write/edit/bash + MCP）"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.110",
+  "uvicorn>=0.27",
+  "websockets>=12",
+  "python-dotenv>=1.0",
+  "openai>=1.30",
+  "httpx>=0.27",
+  "mcp>=1.0,<2",
+]
+
+[project.optional-dependencies]
+desktop = ["pywebview>=5.0"]
+dev = ["pyinstaller>=6.0"]
+
+[tool.setuptools]
+packages = ["agent", "agent.tools", "server", "scripts"]
